@@ -1,0 +1,32 @@
+pipeline{
+    agent any
+    stages{
+        stage("build image"){
+            steps{
+                echo "docker build -t movies:v1 ."
+            }
+        }
+        stage("test container"){
+            steps{
+                echo "docker images"
+            }
+        }
+        stage("publishbr image"){
+            steps{
+                echo "========executing A========"
+            }
+        }
+
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}
