@@ -3,12 +3,12 @@ pipeline{
     stages{
         stage("build image"){
             steps{
-                echo "docker build -t movies:v1 ."
+                sh "docker build -t movies:v1 ."
             }
         }
         stage("test container"){
             steps{
-                echo "docker images"
+                sh "docker images"
             }
         }
         stage("publishbr image"){
