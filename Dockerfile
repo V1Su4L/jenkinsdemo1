@@ -1,8 +1,8 @@
-FROM python:3-alpine-3.12
+FROM python:3.12.2-alpine3.19
 
 WORKDIR /app
 
-COPY .txt .
+COPY *.txt .
 RUN pip3 install -r requirments.txt
 
 COPY movies.py .
